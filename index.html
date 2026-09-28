@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST INTERNAL DINKES KOTA TANGERANG</title>
+    <style>
+        :root {
+            --blue-health: #005b8f;
+            --green-health: #00a651;
+            --bg-color: #f4f7f6;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--blue-health), var(--green-health));
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header img {
+            width: 70px;
+            height: auto;
+            vertical-align: middle;
+            margin: 0 15px;
+        }
+
+        .header h1 {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 30px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: var(--blue-health);
+            border-bottom: 2px solid var(--green-health);
+            padding-bottom: 10px;
+        }
+
+        .category-header {
+            background: #e8f5e9;
+            color: var(--green-health);
+            padding: 12px 15px;
+            border-radius: 5px;
+            margin: 25px 0 15px 0;
+            font-size: 18px;
+            font-weight: bold;
+            border-left: 6px solid var(--green-health);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--blue-health);
+            outline: none;
+        }
+
+        button {
+            background-color: var(--blue-health);
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: var(--green-health);
+        }
+
+        .question-block {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-left: 4px solid var(--blue-health);
+            border-radius: 4px;
+        }
+
+        .question-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .options label {
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+            padding: 8px 12px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: 0.2s;
+        }
+
+        .options label:hover {
+            background: #e8f4fd;
+            border-color: var(--blue-health);
+        }
+
+        .options input {
+            margin-right: 10px;
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: var(--blue-health);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            margin-bottom: 8px;
+        }
+
+        #result-section {
+            text-align: center;
+        }
+
+        .score-box {
+            font-size: 52px;
+            font-weight: bold;
+            color: var(--green-health);
+            margin: 20px 0;
+            padding: 15px;
+            border: 3px solid var(--green-health);
+            display: inline-block;
+            border-radius: 10px;
+            min-width: 200px;
+        }
+
+        .warning-text {
+            color: #d32f2f;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 20px;
+            border: 2px dashed #d32f2f;
+            background: #ffebee;
+            border-radius: 8px;
+            margin-top: 25px;
+            line-height: 1.5;
+        }
+
+        .biodata-summary {
+            text-align: left;
+            background: #f0f4f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .biodata-summary table {
+            width: 100%;
+        }
+
+        .biodata-summary td {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Lambang_Kota_Tangerang.png/300px-Lambang_Kota_Tangerang.png" alt="Logo Tangerang">
+        <h1>TEST INTERNAL<br>DINAS KESEHATAN KOTA TANGERANG</h1>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Logo_Bakti_Husada.svg/300px-Logo_Bakti_Husada.svg.png" alt="Logo Dinkes">
+    </div>
+
+    <!-- HALAMAN REGISTRASI -->
+    <div class="container" id="registration-section">
+        <h2>Data Peserta Pelatihan</h2>
+        <p>Silakan lengkapi data diri Anda secara benar sebelum memulai ujian 60 soal.</p>
+        
+        <form id="reg-form">
+            <div class="form-group">
+                <label>Nama Lengkap (Sesuai KTP)</label>
+                <input type="text" id="nama" required minlength="3" placeholder="Masukkan Nama Lengkap">
+            </div>
+            <div class="form-group">
+                <label>Alamat Lengkap</label>
+                <textarea id="alamat" rows="3" required minlength="10" placeholder="Masukkan Alamat Lengkap"></textarea>
+            </div>
+            <div class="form-group">
+                <label>NIK (Wajib Tepat 16 Digit)</label>
+                <input type="text" id="nik" required maxlength="16" placeholder="Contoh: 3671012345670001" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                <small style="color:red; display:none;" id="nik-error">NIK wajib tepat 16 digit angka!</small>
+            </div>
+            <div class="form-group">
+                <label>Tempat Lahir</label>
+                <input type="text" id="tempat_lahir" required placeholder="Masukkan Tempat Lahir">
+            </div>
+            <div class="form-group">
+                <label>Tanggal Lahir</label>
+                <input type="date" id="tanggal_lahir" required>
+            </div>
+            <div class="form-group">
+                <label>Pendidikan Terakhir</label>
+                <select id="pendidikan" required>
+                    <option value="">-- Pilih Pendidikan --</option>
+                    <option value="SMA/SMK Sederajat">SMA/SMK Sederajat</option>
+                    <option value="D3 Kesehatan / Farmasi">D3 Kesehatan / Farmasi</option>
+                    <option value="S1 / D4 Kesehatan">S1 / D4 Kesehatan</option>
+                    <option value="Profesi Apoteker/Dokter/Ners">Profesi Apoteker / Dokter / Ners</option>
+                    <option value="S2 / Pascasarjana">S2 / Pascasarjana</option>
+                </select>
+            </div>
+            <button type="button" onclick="startQuiz()">Mulai Ujian Pelatihan</button>
+        </form>
+    </div>
+
+    <!-- HALAMAN SOAL UJIAN -->
+    <div class="container" id="quiz-section" style="display:none;">
+        <h2>Lembar Soal Ujian Pelatihan (60 Soal)</h2>
+        <form id="quiz-form">
+            <div id="questions-container"></div>
+            <button type="button" onclick="submitQuiz()">Selesai & Kirim Jawaban</button>
+        </form>
+    </div>
+
+    <!-- HALAMAN HASIL & PENILAIAN -->
+    <div class="container" id="result-section" style="display:none;">
+        <h2>Hasil Penilaian Ujian</h2>
+        
+        <div class="biodata-summary">
+            <table>
+                <tr><td width="30%"><strong>Nama Lengkap</strong></td><td>: <span id="res-nama"></span></td></tr>
+                <tr><td><strong>NIK</strong></td><td>: <span id="res-nik"></span></td></tr>
+                <tr><td><strong>Tempat, Tgl Lahir</strong></td><td>: <span id="res-ttl"></span></td></tr>
+                <tr><td><strong>Pendidikan</strong></td><td>: <span id="res-pdd"></span></td></tr>
+                <tr><td><strong>Alamat</strong></td><td>: <span id="res-alamat"></span></td></tr>
+            </table>
+        </div>
+
+        <p>Skor Akhir Ujian Anda (Skala 100):</p>
+        <div class="score-box" id="res-score">0</div>
+        <p id="res-detail"></p>
+
+        <div class="warning-text">
+            ⚠️ <strong>PERHATIAN PESERTA:</strong><br>
+            HARAP AMBIL TANGKAPAN LAYAR (SCREENSHOT) HALAMAN INI UNTUK LAPORAN KE DINAS KESEHATAN KOTA TANGERANG
+        </div>
+    </div>
+
+    <script>
+        // DATA 60 SOAL LENGKAP
+        const questions = [
+            // ==================== KATEGORI 1: KESEHATAN UMUM (SOAL 1-20) ====================
+            { category: "Kesehatan Umum", text: "Apa kepanjangan dari PHBS dalam program kesehatan masyarakat?", options: ["Perilaku Hidup Bersih dan Sehat", "Pola Hidup Bersih dan Sehat", "Perlindungan Hidup Bersih dan Sehat", "Pencegahan Hidup Bersih dan Sehat"], answer: 0 },
+            { category: "Kesehatan Umum", text: "Vektor utama penyebaran penyakit Demam Berdarah Dengue (DBD) adalah nyamuk...", options: ["Anopheles", "Culex", "Aedes aegypti", "Mansonia"], answer: 2 },
+            { category: "Kesehatan Umum", text: "Kondisi gagal tumbuh pada anak balita akibat kekurangan gizi kronis dinamakan...", options: ["Marasmus", "Kwashiorkor", "Stunting", "Obesitas"], answer: 2 },
+            { category: "Kesehatan Umum", text: "Vaksin yang diberikan pada bayi untuk mencegah penyakit Tuberkulosis (TBC) adalah...", options: ["DPT", "BCG", "Polio", "Campak"], answer: 1 },
+            { category: "Kesehatan Umum", text: "Rentang suhu tubuh normal pada manusia dewasa dalam kondisi sehat adalah...", options: ["35.0 - 36.0 °C", "36.5 - 37.2 °C", "37.5 - 38.5 °C", "38.5 - 39.5 °C"], answer: 1 },
+            { category: "Kesehatan Umum", text: "Berapa tekanan darah ideal/normal untuk orang dewasa sehat?", options: ["120/80 mmHg", "140/90 mmHg", "100/60 mmHg", "130/85 mmHg"], answer: 0 },
+            { category: "Kesehatan Umum", text: "Vitamin yang berperan penting dalam menjaga kesehatan mata dan mencegah rabun senja adalah...", options: ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin D"], answer: 0 },
+            { category: "Kesehatan Umum", text: "Penyakit pembesaran kelenjar tiroid umumnya disebabkan oleh kekurangan unsur...", options: ["Kalsium", "Zat Besi", "Yodium", "Seng (Zinc)"], answer: 2 },
+            { category: "Kesehatan Umum", text: "Program PIS-PK merupakan singkatan dari...", options: ["Program Indonesia Sehat dengan Pendekatan Keluarga", "Program Integrasi Sehat Pelayanan Kesehatan", "Pusat Informasi Sehat Penanganan Keluarga", "Peningkatan Indeks Sehat Penduduk Kota"], answer: 0 },
+            { category: "Kesehatan Umum", text: "Hari Kesehatan Nasional (HKN) diperingati setiap tanggal...", options: ["12 November", "22 Desember", "17 Agustus", "15 Oktober"], answer: 0 },
+            { category: "Kesehatan Umum", text: "Gerakan Masyarakat Hidup Sehat disingkat menjadi...", options: ["GERMAS", "GEMAS", "GARKES", "GELISAH"], answer: 0 },
+            { category: "Kesehatan Umum", text: "Penularan HIV/AIDS TIDAK dapat terjadi melalui...", options: ["Hubungan seksual berisiko", "Transfusi darah terinfeksi", "Jarum suntik bergantian", "Gigitan nyamuk dan kontak sosial biasa"], answer: 3 },
+            { category: "Kesehatan Umum", text: "Kadar Hemoglobin (Hb) minimal normal pada ibu hamil adalah...", options: ["8 g/dL", "9 g/dL", "11 g/dL", "14 g/dL"], answer: 2 },
+            { category: "Kesehatan Umum", text: "Jumlah langkah mencuci tangan yang benar sesuai standar WHO adalah...", options: ["4 Langkah", "5 Langkah", "6 Langkah", "7 Langkah"], answer: 2 },
+            { category: "Kesehatan Umum", text: "Bakteri penyebab utama penyakit Tuberkulosis (TBC) adalah...", options: ["Salmonella typhi", "Mycobacterium tuberculosis", "Escherichia coli", "Streptococcus pneumoniae"], answer: 1 },
+            { category: "Kesehatan Umum", text: "Imunisasi dasar lanjutan Campak/MR diberikan pada anak saat usia...", options: ["9 Bulan", "2 Bulan", "4 Bulan", "6 Bulan"], answer: 0 },
+            { category: "Kesehatan Umum", text: "Komponen Trias Epidemiologi terdiri dari...", options: ["Host, Agent, Environment", "Virus, Bakteri, Jamur", "Manusia, Hewan, Tumbuhan", "Penyakit, Obat, Dokter"], answer: 0 },
+            { category: "Kesehatan Umum", text: "Rumus sederhana menghitung Indeks Massa Tubuh (IMT) adalah...", options: ["BB(kg) / TB(m)²", "TB(cm) - BB(kg)", "BB(kg) * TB(m)", "TB(m) / BB(kg)²"], answer: 0 },
+            { category: "Kesehatan Umum", text: "Penyakit Malaria disebabkan oleh infeksi parasit genus...", options: ["Plasmodium", "Ascaris", "Amoeba", "Toxoplasma"], answer: 0 },
+            { category: "Kesehatan Umum", text: "Imunisasi dasar lengkap hendaknya telah diselesaikan sebelum anak berusia...", options: ["1 Tahun (11 Bulan)", "2 Tahun", "3 Tahun", "5 Tahun"], answer: 0 },
+
+            // ==================== KATEGORI 2: REGULASI & PERATURAN DINKES/KEMENKES (SOAL 21-40) ====================
+            { category: "Regulasi & Undang-Undang", text: "Undang-Undang Kesehatan terbaru yang berlaku omnibus law di Indonesia disahkan pada tahun 2023 yaitu...", options: ["UU No. 36 Tahun 2009", "UU No. 17 Tahun 2023", "UU No. 4 Tahun 1984", "UU No. 40 Tahun 2004"], answer: 1 },
+            { category: "Regulasi & Undang-Undang", text: "Standar Pelayanan Minimal (SPM) Bidang Kesehatan Daerah Kabupaten/Kota diatur dalam Permenkes...", options: ["Permenkes No 4 Tahun 2019", "Permenkes No 43 Tahun 2019", "Permenkes No 75 Tahun 2014", "Permenkes No 9 Tahun 2014"], answer: 0 },
+            { category: "Regulasi & Undang-Undang", text: "Badan Penyelenggara Jaminan Sosial (BPJS) dibentuk berdasarkan UU Nomor...", options: ["UU No 24 Tahun 2011", "UU No 40 Tahun 2004", "UU No 36 Tahun 2009", "UU No 29 Tahun 2004"], answer: 0 },
+            { category: "Regulasi & Undang-Undang", text: "Puskesmas sebagai Fasilitas Pelayanan Kesehatan Tingkat Pertama diatur dalam...", options: ["Permenkes No 43 Tahun 2019", "Permenkes No 72 Tahun 2016", "Permenkes No 9 Tahun 2014", "Permenkes No 3 Tahun 2020"], answer: 0 },
+            { category: "Regulasi & Undang-Undang", text: "Sesuai UU No. 17 Tahun 2023, Surat Tanda Registrasi (STR) untuk Tenaga Medis dan Tenaga Kesehatan berlaku...", options: ["5 Tahun", "3 Tahun", "Seumur Hidup", "10 Tahun"], answer: 2 },
+            { category: "Regulasi & Undang-Undang", text: "Penyelenggaraan Rekam Medis Elektronik di seluruh Faskes diatur dalam...", options: ["Permenkes No 24 Tahun 2022", "Permenkes No 11 Tahun 2017", "Permenkes No 51 Tahun 2009", "Permenkes No 30 Tahun 2014"], answer: 0 },
+            { category: "Regulasi & Undang-Undang", text: "Keselamatan Pasien (Patient Safety) di fasilitas pelayanan kesehatan diatur dalam...", options: ["Permenkes No 11 Tahun 2017", "Permenkes No 43 Tahun 2019", "Permenkes No 75 Tahun 2014", "Permenkes No 12 Tahun 2020"], answer: 0 },
+            { category: "Regulasi & Undang-Undang", text: "Sistem Jaminan Sosial Nasional (SJSN) di Indonesia diatur dalam...", options: ["UU No 40 Tahun 2004", "UU No 24 Tahun 2011", "UU No 36 Tahun 2009", "UU No 23 Tahun 2014"], answer: 0 },
+            { category: "Regulasi & Undang-Undang", text: "Lembaga penyelenggara Akreditasi Puskesmas dan Klinik diatur dalam Permenkes Nomor...", options: ["Permenkes No 34 Tahun 2022", "Permenkes No 46 Tahun 2015", "Permenkes No 75 Tahun 2014", "Permenkes No 12 Tahun 2018"], answer: 0 },
+            { category: "Regulasi & Undang-Undang", text: "Penggolongan Tindak Pidana dan Regulasi Narkotika diatur dalam...", options: ["UU No 35 Tahun 2009", "UU No 5 Tahun 1997", "UU No 36 Tahun 2009", "UU No 17 Tahun 2023"], answer: 0 },
+            { category: "Regulasi & Undang-Undang", text: "Berikut ini yang BUKAN merupakan kelompok Tenaga Kesehatan menurut regulasi adalah...", options: ["Tenaga Ketafsiran", "Tenaga Keperawatan", "Tenaga Kefarmasian", "Tenaga Administrasi Keuangan"], answer: 3 },
+            { category: "Regulasi & Undang-Undang", text: "Izin Praktik Tenaga Kesehatan (SIP) dikeluarkan oleh institusi resmi yaitu...", options: ["Pemerintah Daerah / Dinas Kesehatan / DPMPTSP", "Kementerian Kesehatan langsung", "Organisasi Profesi Pusat", "Kepala Puskesmas setempat"], answer: 0 },
+            { category: "Regulasi & Undang-Undang", text: "Penyelenggaraan Karantina Kesehatan di wilayah perbatasan/pintu masuk diatur dalam...", options: ["UU No 6 Tahun 2018", "UU No 4 Tahun 1984", "UU No 24 Tahun 2007", "UU No 36 Tahun 2009"], answer: 0 },
+            { category: "Regulasi & Undang-Undang", text: "Sesuai aturan rekam medis, masa penyimpanan berkas rekam medis fisik pada RS/Faskes paling singkat adalah...", options: ["5 Tahun", "2 Tahun", "10 Tahun", "15 Tahun"], answer: 0 },
+            { category: "Regulasi & Undang-Undang", text: "Penerapan Transformasi Pelayanan Primer Kemenkes RI berfokus pada integrasi pelayanan melalui...", options: ["ILP (Integrasi Layanan Primer)", "Posyandu Lansia saja", "Pengurangan Faskes", "Digitalisasi Rumah Sakit Tipe A"], answer: 0 },
+            { category: "Regulasi & Undang-Undang", text: "Standardisasi penanganan Stunting di Puskesmas diatur dalam Permenkes Nomor...", options: ["Permenkes No 29 Tahun 2019", "Permenkes No 4 Tahun 2019", "Permenkes No 43 Tahun 2019", "Permenkes No 2 Tahun 2020"], answer: 0 },
+            { category: "Regulasi & Undang-Undang", text: "Limbah medis padat kategori infeksius di Faskes wajib dimasukkan ke dalam kantong plastik berwarna...", options: ["Kuning", "Hitam", "Merah", "Cokelat"], answer: 0 },
+            { category: "Regulasi & Undang-Undang", text: "Limbah sitotoksik / kimia berbahaya pada fasilitas kesehatan ditampung dalam wadah berwarna...", options: ["Ungu", "Kuning", "Cokelat", "Biru"], answer: 0 },
+            { category: "Regulasi & Undang-Undang", text: "Prinsip utama tata kelola puskesmas berdasarkan peraturan Kemenkes adalah...", options: ["Efektif, Efisien, Mutu, dan Keselamatan Pasien", "Mencari keuntungan daerah semata", "Mengurangi jumlah pasien rawat inap", "Prioritas pada pengobatan herbal"], answer: 0 },
+            { category: "Regulasi & Undang-Undang", text: "Penanggung jawab utama kesehatan masyarakat tingkat kecamatan di bawah Dinas Kesehatan adalah...", options: ["Puskesmas", "Klinik Pratama Swasta", "Apotek Kecamatan", "Rumah Sakit Swasta"], answer: 0 },
+
+            // ==================== KATEGORI 3: KEFARMASIAN & OBAT-OBATAN ADVANCE (SOAL 41-60) ====================
+            { category: "Kefarmasian (Advance)", text: "Efek samping batuk kering persisten pada penggunaan obat Captopril (ACE Inhibitor) disebabkan akumulasi...", options: ["Histamin", "Bradikinin", "Serotonin", "Prostaglandin"], answer: 1 },
+            { category: "Kefarmasian (Advance)", text: "Antidotum spesifik yang paling tepat untuk mengatasi toksisitas/keracunan Paracetamol adalah...", options: ["Naloxone", "Flumazenil", "N-Acetylcysteine (NAC)", "Atropin sulfat"], answer: 2 },
+            { category: "Kefarmasian (Advance)", text: "Antibiotik golongan Aminoglikosida (seperti Gentamicin) memiliki risiko efek samping utama berupa...", options: ["Hepatotoksisitas", "Ototoksisitas dan Nefrotoksik", "Kardiotoksisitas", "Neurotoksisitas perifer"], answer: 1 },
+            { category: "Kefarmasian (Advance)", text: "Mekanisme kerja Omeprazole dalam menekan produksi asam lambung adalah...", options: ["Antagonis Reseptor H2", "Menghambat enzim H+/K+-ATPase (Inhibitor Pompa Proton)", "Menetralkan asam secara langsung", "Melindungi mukosa dengan membentuk lapisan gel"], answer: 1 },
+            { category: "Kefarmasian (Advance)", text: "Waktu paruh (half-life) eliminated obat antiaritmia Amiodarone sangat panjang, rata-rata berkisar antara...", options: ["2 - 4 jam", "12 - 24 jam", "1 - 2 hari", "20 - 100 hari"], answer: 3 },
+            { category: "Kefarmasian (Advance)", text: "Efek samping Kardiotoksisitas irreversible (gagal jantung) merupakan efek toksik khas dari agen kemoterapi...", options: ["Doxorubicin", "Methotrexate", "Cisplatin", "Vincristine"], answer: 0 },
+            { category: "Kefarmasian (Advance)", text: "Antidotum spesifik untuk mengatasi overdosis opioid seperti Morfin atau Pethidin adalah...", options: ["Naloxone", "Neostigmin", "Atropin", "Flumazenil"], answer: 0 },
+            { category: "Kefarmasian (Advance)", text: "Mekanisme kerja obat antidiabetes golongan Sulfonilurea (contoh: Glibenklamid) adalah...", options: ["Meningkatkan sensitivitas sel terhadap insulin", "Merangsang sekresi insulin dari sel-beta pankreas", "Menghambat penyerapan glukosa di usus", "Menghambat reabsorpsi glukosa di ginjal"], answer: 1 },
+            { category: "Kefarmasian (Advance)", text: "Aktivitas antikoagulan Warfarin dihambat secara langsung oleh asupan suplemen/makanan yang kaya...", options: ["Vitamin C", "Vitamin K", "Vitamin E", "Vitamin B12"], answer: 1 },
+            { category: "Kefarmasian (Advance)", text: "Antibiotik golongan Penisilin dan Sefalosporin membunuh bakteri dengan cara...", options: ["Menghambat sintesis dinding sel bakteri", "Menghambat sintesis protein pada ribosom 50S", "Menghambat replikasi DNA gyrase", "Merusak membran sel jamur"], answer: 0 },
+            { category: "Kefarmasian (Advance)", text: "Efek samping khas berupa perubahan warna urin/cairan tubuh menjadi merah-oranye terjadi pada obat TB...", options: ["Isoniazid", "Rifampisin", "Pirazinamid", "Ethambutol"], answer: 1 },
+            { category: "Kefarmasian (Advance)", text: "Obat pilihan utama (First Line) secara intravena untuk mengatasi Status Epileptikus kejang berulang adalah...", options: ["Diazepam / Lorazepam", "Paracetamol", "Phenobarbital per-oral", "Carbamazepine"], answer: 0 },
+            { category: "Kefarmasian (Advance)", text: "Obat berikut yang memiliki Indeks Terapi Sempit (Narrow Therapeutic Index) dan memerlukan monitoring ketat adalah...", options: ["Digoksin", "Amoxicillin", "Paracetamol", "Cetirizine"], answer: 0 },
+            { category: "Kefarmasian (Advance)", text: "Mekanisme kerja obat anti-hiperlipidemia Simvastatin adalah...", options: ["Menghambat enzim HMG-CoA Reduktase", "Menikat asam empedu di usus", "Menghambat absorpsi kolesterol NPC1L1", "Meningkatkan klirens VLDL"], answer: 0 },
+            { category: "Kefarmasian (Advance)", text: "Antidotum spesifik yang digunakan pada kasus overdosis obat penenang golongan Benzodiazepin adalah...", options: ["Flumazenil", "Naloxone", "Atropin", "Dimercaprol"], answer: 0 },
+            { category: "Kefarmasian (Advance)", text: "Penggunaan Kortikosteroid dosis tinggi dalam jangka panjang dapat memicu sindrom...", options: ["Cushing Syndrome & Osteoporosis", "Stevens-Johnson Syndrome", "Extrapyramidal Syndrome", "Gray Baby Syndrome"], answer: 0 },
+            { category: "Kefarmasian (Advance)", text: "Mengapa obat dengan sediaan Sustained Release (SR) atau Extended Release (XR) TIDAK BOHLEH digerus?", options: ["Akan menyebabkan Dose Dumping (pelepasan dosis tinggi sekaligus)", "Menyebabkan obat menjadi asam", "Membuat obat tidak bisa larut di air", "Menghilangkan rasa obat"], answer: 0 },
+            { category: "Kefarmasian (Advance)", text: "Obat Antiretroviral (ARV) jenis Efavirenz tergolong dalam kelompok...", options: ["NNRTI (Non-Nucleoside Reverse Transcriptase Inhibitor)", "NRTI", "Protease Inhibitor", "Integrase Inhibitor"], answer: 0 },
+            { category: "Kefarmasian (Advance)", text: "Digoksin meningkatkan kontraksi otot jantung (inotropik positif) melalui mekanisme...", options: ["Menghambat pompa Na+/K+-ATPase", "Membuka saluran Kalsium", "Menghambat Alfa-1 adrenergik", "Stimulasi Beta-2 adrenergik"], answer: 0 },
+            { category: "Kefarmasian (Advance)", text: "Tindakan pertama lini darurat pada syok anafilaksis berat akibat reaksi alergi obat adalah injeksi...", options: ["Epinefrin (Adrenalin) IM", "Deksametason IV", "Diphenhydramine IV", "Salbutamol Inhalasi"], answer: 0 }
+        ];
+
+        // FUNGSI VALIDASI NIK & START QUIZ
+        function startQuiz() {
+            const nama = document.getElementById('nama').value.trim();
+            const alamat = document.getElementById('alamat').value.trim();
+            const nik = document.getElementById('nik').value.trim();
+            const tmpt = document.getElementById('tempat_lahir').value.trim();
+            const tgl = document.getElementById('tanggal_lahir').value;
+            const pdd = document.getElementById('pendidikan').value;
+            const errorNik = document.getElementById('nik-error');
+
+            if(!nama || !alamat || !nik || !tmpt || !tgl || !pdd) {
+                alert("Mohon isi seluruh formulir data diri terlebih dahulu!");
+                return;
+            }
+
+            // VALIDASI NIK WAJIB 16 DIGIT
+            if(nik.length !== 16) {
+                errorNik.style.display = 'block';
+                document.getElementById('nik').focus();
+                return;
+            } else {
+                errorNik.style.display = 'none';
+            }
+
+            // RENDER 60 SOAL
+            const container = document.getElementById('questions-container');
+            container.innerHTML = "";
+            
+            let currentCategory = "";
+
+            questions.forEach((q, index) => {
+                // Buat pemisah kategori
+                if(q.category !== currentCategory) {
+                    currentCategory = q.category;
+                    container.innerHTML += `<div class="category-header">Kategori: ${currentCategory} (Soal ${index + 1} - ${index + 20})</div>`;
+                }
+
+                let optionsHtml = '';
+                q.options.forEach((opt, i) => {
+                    optionsHtml += `
+                        <label>
+                            <input type="radio" name="q${index}" value="${i}" required>
+                            <strong>${String.fromCharCode(65 + i)}.</strong> ${opt}
+                        </label>
+                    `;
+                });
+
+                container.innerHTML += `
+                    <div class="question-block">
+                        <span class="category-badge">${q.category}</span>
+                        <div class="question-title">${index + 1}. ${q.text}</div>
+                        <div class="options">${optionsHtml}</div>
+                    </div>
+                `;
+            });
+
+            // BERPINDAH HALAMAN
+            document.getElementById('registration-section').style.display = 'none';
+            document.getElementById('quiz-section').style.display = 'block';
+            window.scrollTo(0,0);
+        }
+
+        // FUNGSI HITUNG SKOR & SUBMIT
+        function submitQuiz() {
+            let form = document.getElementById('quiz-form');
+            
+            // Cek apakah semua soal dijawab
+            if(!form.checkValidity()) {
+                alert("Mohon selesaikan dan jawab semua 60 soal sebelum mengumpulkan!");
+                return;
+            }
+
+            let correctCount = 0;
+
+            questions.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="q${index}"]:checked`);
+                if(selected && parseInt(selected.value) === q.answer) {
+                    correctCount++;
+                }
+            });
+
+            // Menghitung Nilai Akhir Skala 100
+            let finalScore = Math.round((correctCount / questions.length) * 100);
+
+            // TAMPILKAN DATA DAN SKOR
+            document.getElementById('res-nama').innerText = document.getElementById('nama').value.toUpperCase();
+            document.getElementById('res-nik').innerText = document.getElementById('nik').value;
+            document.getElementById('res-ttl').innerText = document.getElementById('tempat_lahir').value + ", " + document.getElementById('tanggal_lahir').value;
+            document.getElementById('res-pdd').innerText = document.getElementById('pendidikan').value;
+            document.getElementById('res-alamat').innerText = document.getElementById('alamat').value;
+
+            document.getElementById('res-score').innerText = finalScore;
+            document.getElementById('res-detail').innerText = `Anda menjawab benar ${correctCount} dari ${questions.length} soal.`;
+
+            // PINDAH KELAYAR HASIL
+            document.getElementById('quiz-section').style.display = 'none';
+            document.getElementById('result-section').style.display = 'block';
+            window.scrollTo(0,0);
+        }
+    </script>
+</body>
+</html>
